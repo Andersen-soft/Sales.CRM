@@ -1,0 +1,172 @@
+.rdrNextPrevButton {
+    background: transparent;
+    border-radius: 50%;
+}
+
+.rdrNextPrevButton:hover,
+.rdrNextPrevButton:active {
+    background: #e5e9f0;
+}
+
+.rdrSelected {
+    background: #feda00;
+}
+
+.rdrDayStartPreview,
+.rdrDayEndPreview {
+    color: #feda00;
+}
+
+.rdrMonth {
+    width: 230px;
+}
+
+.rdrDayNumber {
+    font-family: Roboto, sans-serif;
+    color: transparent;
+}
+
+.rdrMonthAndYearPickers {
+    text-transform: capitalize;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+}
+
+.rdrWeekDay {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: #212121;
+    opacity: .6;
+}
+
+.rdrWeekDays {
+    margin: 15px 0;
+}
+
+.rdrInRange {
+    opacity: .2;
+}
+
+.rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span,
+.rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
+    color: #212121;
+}
+
+.rdrSelected,
+.rdrInRange,
+.rdrStartEdge,
+.rdrEndEdge {
+    top: 5px;
+    bottom: 5px;
+}
+
+.rdrDayToday .rdrDayNumber span::after {
+    content: none;
+}
+
+.rdrStartEdge,
+.rdrEndEdge {
+    /* #FEDA00 with 0.2 opacity */
+    color: rgba(254, 218, 0, .2) !important;
+}
+
+.rdrStartEdge {
+    margin-left: 4px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.rdrEndEdge {
+    margin-right: 4px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.rdrStartEdge::after,
+.rdrEndEdge::after {
+    display: block;
+    position: absolute;
+    content: '' !important;
+    border-radius: 50%;
+    background: #feda00;
+    width: 26px;
+    height: 26px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rdrStartEdge:not(.rdrEndEdge)::after {
+    margin-left: -3px;
+}
+
+.rdrEndEdge:not(.rdrStartEdge)::after {
+    margin-left: 3px;
+}
+
+.rdrNextPrevButton i {
+    border-width: 0 2px 2px 0;
+    border-color: rgb(52, 73, 94);
+    width: 6px;
+    height: 6px;
+}
+
+/* тут не опечатка */
+.rdrPprevButton i {
+    transform: rotate(135deg) translateX(-1px);
+}
+
+.rdrNextPrevButton.rdrPprevButton {
+    margin: 0 0 0 .833em;
+}
+
+.rdrNextButton i {
+    transform: rotate(-45deg);
+}
+
+.rdrNextPrevButton.rdrNextButton {
+    margin: 0 .833em 0 0;
+}
+
+.rdrDayEndPreview {
+    right: 2px;
+}
+
+.rdrDayStartPreview {
+    left: 2px;
+}
+
+.rdrDayStartPreview,
+.rdrDayEndPreview,
+.rdrDayInPreview {
+    top: 4px;
+    bottom: 4px;
+}
+
+.rdrDayStartOfMonth .rdrDayInPreview,
+.rdrDayStartOfMonth .rdrDayEndPreview,
+.rdrDayStartOfWeek .rdrDayInPreview,
+.rdrDayStartOfWeek .rdrDayEndPreview {
+    left: 1px;
+}
+
+.rdrDayEndOfMonth .rdrDayInPreview,
+.rdrDayEndOfMonth .rdrDayStartPreview,
+.rdrDayEndOfWeek .rdrDayInPreview,
+.rdrDayEndOfWeek .rdrDayStartPreview {
+    left: 0;
+}
+
+.rdrDayDisabled {
+    background-color: unset;
+}
+
+.rdrMonthAndYearPickers select {
+    padding-right: 10px;
+    background-color: #f4f5f9;
+}

@@ -1,0 +1,1 @@
+export const PAGINATION_STEP_COUNT = 20;

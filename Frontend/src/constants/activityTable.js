@@ -1,0 +1,2 @@
+export const GET_ACTIVITY_TABLE = 'GET_ACTIVITY_TABLE';
+

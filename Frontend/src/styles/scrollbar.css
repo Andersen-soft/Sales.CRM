@@ -1,0 +1,32 @@
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: rgba(180, 185, 199, .3);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(105, 115, 143, .6);
+}
+
+*::-webkit-scrollbar-button {
+    height: 3px;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar:horizontal {
+    height: 6px;
+}
+
+*::-webkit-scrollbar-button:horizontal {
+    width: 3px;
+    background-color: transparent;
+}
+
+@-moz-document url-prefix() {
+    * {
+        scrollbar-color: rgba(105, 115, 143, .6) rgba(180, 185, 199, .3);
+        scrollbar-width: thin;
+    }
+}
