@@ -26,7 +26,7 @@ To submit a pull request:
 1. Select reviewers: [Front] *spodoprigora*, [Back] *evgotin*
 1. Wait for CI results/reviews, process the feedback.
 
-All contributions are considered as [original BSD](https://git.andersenlab.com/Andersen/sales.crm/-/blob/master/LICENSE.txt) unless it's explicitly stated otherwise.
+All contributions are considered as [original BSD](https://github.com/Andersen-soft/Sales.CRM/blob/master/LICENSE.txt) unless it's explicitly stated otherwise.
 
 We require pull request submitters to sign the contributor agreement.. Please downloand the Agreement, complete it and sign, then scan and email a pdf file to crm.legal@andersenlab.com.
 
@@ -39,7 +39,7 @@ Once your Pull Request has passed the rewiew and it's ready to be merged, it wil
 Our project is on the way to perfection. That's why time to time we have updates and releases, as well as improvements and bug fixes. We will keep you in touch by release notes and announcements.
 
 ## License
-Andersen CRM Sales is licensed under the [original BSD License](https://git.andersenlab.com/Andersen/sales.crm/-/blob/master/LICENSE.txt)
+Andersen CRM Sales is licensed under the [original BSD License](https://github.com/Andersen-soft/Sales.CRM/blob/master/LICENSE.txt)
 
 ## Quick start
 1. Сlone the repository:</br> 
