@@ -12,7 +12,7 @@ business processes which are meant to meet a customer with the company in a most
 
 ## What our system can do
 
-We have collected key examples of usage. Please, explore the range of Andersen CRM Sales features by getting into [User Guide](./User Guide v 1.0.pdf).<br />
+We have collected key examples of usage. Please, explore the range of Andersen CRM Sales features by getting into [User Guide](https://github.com/Andersen-soft/Sales.CRM/blob/master/User%20Guide%20v%201.0.pdf) <br />
 Download the file for more convenient reading.
 
 ## Support
@@ -57,7 +57,7 @@ Without this configuration, the application will work but not all functionality 
 4. JWT security configuration: [JWT environment variables](/Backend/.env.example#L79)
 
 It is also possible to create sales outside the system through a special user - 'site'.
-To use this user, you need to generate a JWT token for him for authentication using a access token value from security configuration.
+To use this user, you need to generate a JWT token for him for authentication using an access token value from security configuration.
 
 ## Quick start
 1. Сlone the repository:</br> 
