@@ -1,0 +1,79 @@
+spring.h2.console.enabled: true
+spring.h2.console.path: /h2-console
+
+storage:
+  type: amazonS3
+  local:
+    directory: ${CRM_STORAGE_LOCAL:/home/crm/user-crm}
+  amazonS3:
+    bucketName: crmcv
+    prefix: test
+
+db:
+  url: jdbc:h2:mem:OURCRM_DEV;MODE=MySQL;
+  username: sa
+  password:
+  driverclassname: org.h2.Driver
+
+# for local testing due to H2 exception
+#  url: jdbc:mysql://localhost:3306/OURCRM_DEV?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#  username: root
+#  password: root
+#  driverclassname: com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto: create
+spring.jpa.show-sql: true
+spring.jpa.properties.hibernate.format_sql: true
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.H2Dialect
+spring.jpa.properties.hibernate.cache.use_query_cache: false
+spring.jpa.properties.hibernate.hbm2ddl.import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+
+logging.level.org.springframework.security: DEBUG
+
+app:
+  findAllActiveUserInADFilter: (&(objectCategory=person)(objectClass=user)(name=*)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
+  baseDN: dc=andersen-technology,dc=by
+  timezone: GMT+3
+  url: ${CRM_APP_URL:http://127.0.0.1:8090}
+  cors:
+      origins: ${CRM_CORS_ORIGINS:http://127.0.0.1:8080}
+
+thread-pool:
+  core-pool-size: 4
+  max-pool-size: 4
+  queue-capacity: 100
+
+skype:
+  client:
+    id: ${CRM_SKYPE_CLIENT_ID}
+    secret: ${CRM_SKYPE_CLIENT_SECRET}
+  grantType: client_credentials
+  scope: https://api.botframework.com/.default
+  tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+  apiUrl: https://smba.trafficmanager.net/apis/v3/conversations/%s/activities
+  chat:
+    cv:
+    estimation:
+  url:
+    resumeRequest: /resume-requests/
+    estimationRequest: /estimation-requests/
+
+spring:
+  mail:
+    host: ${CRM_MAIL_HOST}
+    username: ${CRM_MAIL_USERNAME}
+    password: ${CRM_MAIL_PASSWORD}
+    protocol: smtp
+    properties:
+      mail:
+        debug: true
+        smtp:
+          port: 50025
+  http:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+logging:
+  level:
+    root: debug

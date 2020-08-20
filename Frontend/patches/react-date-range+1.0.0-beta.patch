@@ -1,0 +1,53 @@
+diff --git a/node_modules/react-date-range/dist/components/Calendar.js b/node_modules/react-date-range/dist/components/Calendar.js
+index 2a40af3..43b9ef6 100644
+--- a/node_modules/react-date-range/dist/components/Calendar.js
++++ b/node_modules/react-date-range/dist/components/Calendar.js
+@@ -406,7 +406,7 @@ var Calendar = function (_PureComponent) {
+           return _react2.default.createElement(
+             'span',
+             { className: _this3.styles.weekDay, key: i },
+-            (0, _format2.default)(day, 'ddd', _this3.dateOptions)
++            (0, _format2.default)(day, 'dd', _this3.dateOptions)
+           );
+         })
+       );
+diff --git a/node_modules/react-date-range/dist/components/Month.js b/node_modules/react-date-range/dist/components/Month.js
+index 5242487..e705ec8 100644
+--- a/node_modules/react-date-range/dist/components/Month.js
++++ b/node_modules/react-date-range/dist/components/Month.js
+@@ -87,7 +87,7 @@ function renderWeekdays(styles, dateOptions) {
+       return _react2.default.createElement(
+         'span',
+         { className: styles.weekDay, key: i },
+-        (0, _format2.default)(day, 'ddd', dateOptions)
++        (0, _format2.default)(day, 'dd', dateOptions)
+       );
+     })
+   );
+diff --git a/node_modules/react-date-range/src/components/Calendar.js b/node_modules/react-date-range/src/components/Calendar.js
+index 0cce0d1..e14b16c 100644
+--- a/node_modules/react-date-range/src/components/Calendar.js
++++ b/node_modules/react-date-range/src/components/Calendar.js
+@@ -231,7 +231,8 @@ class Calendar extends PureComponent {
+           end: endOfWeek(now, this.dateOptions),
+         }).map((day, i) => (
+           <span className={this.styles.weekDay} key={i}>
+-            {format(day, 'ddd', this.dateOptions)}
++            {format(day, 'dd', this.dateOptions)}
++            hey
+           </span>
+         ))}
+       </div>
+diff --git a/node_modules/react-date-range/src/components/Month.js b/node_modules/react-date-range/src/components/Month.js
+index 5061dac..de6503d 100644
+--- a/node_modules/react-date-range/src/components/Month.js
++++ b/node_modules/react-date-range/src/components/Month.js
+@@ -26,7 +26,7 @@ function renderWeekdays(styles, dateOptions) {
+         end: endOfWeek(now, dateOptions),
+       }).map((day, i) => (
+         <span className={styles.weekDay} key={i}>
+-          {format(day, 'ddd', dateOptions)}
++          {format(day, 'dd', dateOptions)}
+         </span>
+       ))}
+     </div>

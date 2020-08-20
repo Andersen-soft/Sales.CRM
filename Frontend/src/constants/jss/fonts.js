@@ -1,0 +1,9 @@
+export const FONT_SIZE_NORMAL = 14;
+export const FONT_SIZE_SMALL = 12;
+export const FONT_SIZE_H1 = 24;
+export const FONT_SIZE_H2 = 20;
+export const FONT_SIZE_H3 = 18;
+export const FONT_SIZE_H4 = 16;
+export const FONT_SIZE_H5 = FONT_SIZE_NORMAL;
+export const FONT_SIZE_H6 = FONT_SIZE_SMALL;
+export const FONT_FAMILY_PRIMARY = 'Roboto, sans-serif';

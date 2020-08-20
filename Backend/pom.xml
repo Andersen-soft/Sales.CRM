@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.andersenlab</groupId>
+    <artifactId>crm_j</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.21.RELEASE</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <querydsl.version>4.2.1</querydsl.version>
+        <com.google.code.gson.gson.version>2.8.5</com.google.code.gson.gson.version>
+        <io.sentry.sentry-log4j2.version>1.7.30</io.sentry.sentry-log4j2.version>
+        <org.springframework.boot.spring-boot-starter-aop.version>1.5.22.RELEASE</org.springframework.boot.spring-boot-starter-aop.version>
+        <org.apache.commons.commons-lang3.version>3.8</org.apache.commons.commons-lang3.version>
+        <org.apache.commons.commons-csv.version>1.6</org.apache.commons.commons-csv.version>
+        <commons-validator.commons-validator.version>1.6</commons-validator.commons-validator.version>
+        <mysql.mysql-connector-java.version>8.0.11</mysql.mysql-connector-java.version>
+        <org.projectlombok.lombok.version>1.18.2</org.projectlombok.lombok.version>
+        <com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>2.9.6</com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>
+        <io.springfox.springfox-swagger2.version>2.9.2</io.springfox.springfox-swagger2.version>
+        <io.springfox.springfox-swagger-ui.version>2.9.2</io.springfox.springfox-swagger-ui.version>
+        <io.swagger.swagger-annotations.version>1.5.21</io.swagger.swagger-annotations.version>
+        <io.swagger.swagger-models.version>1.5.21</io.swagger.swagger-models.version>
+        <com.unboundid.unboundid-ldapsdk-minimal-edition.version>3.2.1</com.unboundid.unboundid-ldapsdk-minimal-edition.version>
+        <com.unboundid.unboundid-ldapsdk.version>4.0.6</com.unboundid.unboundid-ldapsdk.version>
+        <commons-io.commons-io.version>2.6</commons-io.commons-io.version>
+        <commons-codec.commons-codec.version>1.11</commons-codec.commons-codec.version>
+        <io.jsonwebtoken.jjwt.version>0.9.1</io.jsonwebtoken.jjwt.version>
+        <javax.validation.validation-api.version>2.0.1.Final</javax.validation.validation-api.version>
+        <org.hibernate.hibernate-validator.version>6.0.17.Final</org.hibernate.hibernate-validator.version>
+        <org.hibernate.hibernate-c3p0.version>5.3.3.Final</org.hibernate.hibernate-c3p0.version>
+        <org.hibernate.hibernate-validator-annotation-processor.version>6.0.17.Final</org.hibernate.hibernate-validator-annotation-processor.version>
+        <org.apache.cxf.cxf-rt-rs-client.version>3.2.5</org.apache.cxf.cxf-rt-rs-client.version>
+        <com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>2.6.4</com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>
+        <javax.ws.rs.javax.ws.rs-api.version>2.1</javax.ws.rs.javax.ws.rs-api.version>
+        <com.amazonaws.aws-java-sdk.version>1.11.375</com.amazonaws.aws-java-sdk.version>
+        <com.ibm.icu.icu4j.version>62.1</com.ibm.icu.icu4j.version>
+        <org.apache.tika.tika-core.version>1.20</org.apache.tika.tika-core.version>
+        <commons-beanutils.commons-beanutils.version>1.7.0</commons-beanutils.commons-beanutils.version>
+        <com.jcraft.jsch.version>0.1.55</com.jcraft.jsch.version>
+        <org.json.json.version>20160810</org.json.json.version>
+        <net.ttddyy.datasource-proxy.version>1.5</net.ttddyy.datasource-proxy.version>
+        <org.jsoup.jsoup.version>1.11.3</org.jsoup.jsoup.version>
+        <p6spy.p6spy.version>3.8.1</p6spy.p6spy.version>
+        <com.microsoft.bot.schema.botbuilder-schema.version>4.0.0-a1</com.microsoft.bot.schema.botbuilder-schema.version>
+        <io.rest-assured.rest-assured.version>4.1.1</io.rest-assured.rest-assured.version>
+        <org.modelmapper.modelmapper.version>2.3.8</org.modelmapper.modelmapper.version>
+        <org.passay.passay.version>1.6.0</org.passay.passay.version>
+
+        <!-- Plugins !-->
+        <com.mysema.maven.apt-maven-plugin.version>1.1.3</com.mysema.maven.apt-maven-plugin.version>
+        <org.apache.maven.plugins.maven-surefire-plugin.version>3.0.0-M3</org.apache.maven.plugins.maven-surefire-plugin.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${com.google.code.gson.gson.version}</version>
+        </dependency>
+        <!-- Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-messaging</artifactId>
+        </dependency>
+
+        <!-- JPA Data (We are going dateTo use Repositories, Entities, Hibernate, etc...) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.sentry</groupId>
+            <artifactId>sentry-log4j2</artifactId>
+            <version>${io.sentry.sentry-log4j2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <version>${org.springframework.boot.spring-boot-starter-aop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${org.apache.commons.commons-lang3.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${org.apache.commons.commons-csv.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-validator/commons-validator -->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${commons-validator.commons-validator.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.mysql-connector-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+        </dependency>
+
+        <!--Swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${io.springfox.springfox-swagger2.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${io.springfox.springfox-swagger-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${io.swagger.swagger-annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${io.swagger.swagger-models.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.ldap</groupId>
+            <artifactId>spring-ldap-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.unboundid/unboundid-ldapsdk-minimal-edition -->
+        <dependency>
+            <groupId>com.unboundid</groupId>
+            <artifactId>unboundid-ldapsdk-minimal-edition</artifactId>
+            <version>${com.unboundid.unboundid-ldapsdk-minimal-edition.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.unboundid</groupId>
+            <artifactId>unboundid-ldapsdk</artifactId>
+            <version>${com.unboundid.unboundid-ldapsdk.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.commons-codec.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${io.jsonwebtoken.jjwt.version}</version>
+        </dependency>
+
+        <!-- validation api -->
+        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.validation.validation-api.version}</version>
+        </dependency>
+
+        <!-- hibernate validation -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${org.hibernate.hibernate-validator.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${org.hibernate.hibernate-c3p0.version}</version>
+        </dependency>
+
+        <!-- hibernate validation annotation processor -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator-annotation-processor -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>${org.hibernate.hibernate-validator-annotation-processor.version}</version>
+        </dependency>
+
+        <!-- query dsl annotation processing tool-->
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-apt</artifactId>
+            <version>${querydsl.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- query dsl core-->
+        <dependency>
+            <groupId>com.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+            <version>${querydsl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-client</artifactId>
+            <version>${org.apache.cxf.cxf-rt-rs-client.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>${com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${javax.ws.rs.javax.ws.rs-api.version}</version>
+        </dependency>
+
+        <!--Amazon S3-->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>${com.amazonaws.aws-java-sdk.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.ibm.icu/icu4j -->
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>${com.ibm.icu.icu4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>${org.apache.tika.tika-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons-beanutils.commons-beanutils.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>${com.jcraft.jsch.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${org.json.json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.ttddyy</groupId>
+            <artifactId>datasource-proxy</artifactId>
+            <version>${net.ttddyy.datasource-proxy.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${org.jsoup.jsoup.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.p6spy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.microsoft.bot.schema</groupId>
+            <artifactId>botbuilder-schema</artifactId>
+            <version>${com.microsoft.bot.schema.botbuilder-schema.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${io.rest-assured.rest-assured.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${org.modelmapper.modelmapper.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.passay</groupId>
+            <artifactId>passay</artifactId>
+            <version>${org.passay.passay.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.mysema.maven</groupId>
+                <artifactId>apt-maven-plugin</artifactId>
+                <version>${com.mysema.maven.apt-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/generated-sources/java</outputDirectory>
+                            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${org.apache.maven.plugins.maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

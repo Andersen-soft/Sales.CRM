@@ -1,0 +1,54 @@
+version: '3'
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./Frontend
+      dockerfile: ./Dockerfile
+    restart: always
+    env_file:
+      - ./Frontend/.env
+    ports:
+      - "8088:80"
+    depends_on:
+      - backend
+    networks:
+      - crm
+
+  backend:
+    container_name: backend
+    build:
+      context: ./Backend
+      dockerfile: ./Dockerfile
+    restart: always
+    env_file:
+      - ./Backend/.env
+    ports:
+      - "8090:8080"
+    depends_on:
+      - db
+    volumes:
+      - ./log/:/opt/back/logs:rw
+    networks:
+      - crm
+
+  db:
+    container_name: db-mysql
+    image: mysql:5.7
+    restart: always
+    command: --init-file /data/application/init.sql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: "crm"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "user"
+      MYSQL_ROOT_PASSWORD: "root"
+    volumes:
+      - ./db_crm:/var/lib/mysql
+      - ./init.sql:/data/application/init.sql
+    networks:
+      - crm
+
+networks:
+  crm:

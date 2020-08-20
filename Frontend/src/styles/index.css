@@ -1,0 +1,58 @@
+:global {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    svg {
+        overflow: visible;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: 400;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #root {
+        height: 100%;
+        background-color: #edeff4;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .MuiTooltip-tooltip.MuiTooltip-tooltipPlacementBottom,
+    .MuiTooltip-tooltip.MuiTooltip-tooltipPlacementRight,
+    .MuiTooltip-tooltip.MuiTooltip-tooltipPlacementLeft,
+    .MuiTooltip-tooltip.MuiTooltip-tooltipPlacementTop {
+        font-weight: normal;
+        color: #212121;
+        box-shadow: 0 0 7px var(--color-lightgray);
+        background-color: #fff;
+        padding: 5px 8px;
+    }
+
+    .MuiInputBase-inputMultiline,
+    textarea[rows] {
+        transform: translateZ(0);
+    }
+}

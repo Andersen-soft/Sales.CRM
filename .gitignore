@@ -1,0 +1,33 @@
+.idea/
+*.iml
+.vscode/
+.env
+logs/
+db_crm/
+
+# Backend
+Backend/**/target
+Backend/**/classes
+Backend/**/web-app/WEB-INF/classes
+Backend/**/*.log
+Backend/**/*.lock
+Backend/**/application-local.yml
+Backend/**/application.properties
+Backend/**/db.properties
+Backend/**/log4j2.xml
+
+# Frontend
+Frontend/**/node_modules/
+
+Frontend/**/!public/img
+Frontend/**/public/
+
+Frontend/**/test/
+
+Frontend/**/*.temp
+Frontend/**/**/.directory
+Frontend/**/**/*.log
+
+Frontend/**/.env
+
+

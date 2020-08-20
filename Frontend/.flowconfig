@@ -1,0 +1,30 @@
+[ignore]
+.*/node_modules/react-select.*
+
+[include]
+
+[libs]
+
+[lints]
+
+;suppress inspection for section "DuplicateKeyInSection"
+[options]
+module.name_mapper='^crm-helpers' ->'<PROJECT_ROOT>/src/helpers'
+module.name_mapper='^crm-roles' ->'<PROJECT_ROOT>/src/constants/roles.js'
+module.name_mapper='^crm-actions' ->'<PROJECT_ROOT>/src/actions'
+module.name_mapper='^crm-api' ->'<PROJECT_ROOT>/src/api'
+module.name_mapper='^crm-constants' ->'<PROJECT_ROOT>/src/constants'
+module.name_mapper='^crm-components' ->'<PROJECT_ROOT>/src/components'
+module.name_mapper='^crm-containers' ->'<PROJECT_ROOT>/src/containers'
+module.name_mapper='^crm-types' ->'<PROJECT_ROOT>/src/types'
+module.name_mapper='^crm-utils' ->'<PROJECT_ROOT>/src/utils'
+module.name_mapper='^crm-hooks' ->'<PROJECT_ROOT>/src/hooks'
+module.name_mapper='^crm-stores' ->'<PROJECT_ROOT>/src/stores'
+module.name_mapper='^crm-styles' ->'<PROJECT_ROOT>/src/styles'
+module.name_mapper='^crm-ui' ->'<PROJECT_ROOT>/src/components/crmUI'
+module.name_mapper='^crm-static' ->'<PROJECT_ROOT>/src/static'
+module.name_mapper='^crm-icons' ->'<PROJECT_ROOT>/src/components/crmUI/CRMIcons'
+module.name_mapper='^crm-i18n' ->'<PROJECT_ROOT>/src/i18n'
+module.name_mapper.extension='svg' -> '<PROJECT_ROOT>/src/components/crmUI/CRMIcons/CRMIcon.jsx'
+
+[strict]

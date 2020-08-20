@@ -1,0 +1,153 @@
+#File storage options.
+storage:
+  #Storage type. Possible values: local - for local storage;
+  #                               amazonS3 - for Amazon S3 storage.
+  #For 'amazon S3' type use environment variables
+  #to access the storage: AWS_ACCESS_KEY_ID;
+  #                       AWS_SECRET_KEY.
+  type: local
+  local:
+    #Directory for local storage. Used when the type is 'local'.
+    directory: ${CRM_STORAGE_LOCAL:/home/crm/user-crm}
+  #File storage options 'Amazon S3'. Used when the type is 'amazonS3'.
+  amazonS3:
+    #Bucket name.
+    bucketName: ${AWS_BUCKET_NAME}
+    #Prefix for stand designation. Possible values: test, develop, stage, beta.
+    #For the OS, the user sets an arbitrary value.
+    prefix: ${AWS_PREFIX}
+
+# Change to true if you need schema initialization, i.e. for first application startup.
+spring.datasource.initialize: true
+spring.jpa.hibernate.ddl-auto: validate
+spring.jpa.properties.hibernate.dialect: com.andersenlab.crm.configuration.CrmMySQL57InnoDBDialect
+
+db:
+  url: ${CRM_DB_SERVER_URL:jdbc:mysql://db-mysql:3306/crm?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false}
+  username: ${CRM_DB_USERNAME:root}
+  password: ${CRM_DB_PASSWORD:root}
+  driverclassname: com.mysql.cj.jdbc.Driver
+
+app:
+  findAllActiveUserInADFilter: (&(objectCategory=person)(objectClass=user)(name=*)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
+  baseDN: dc=andersen-technology,dc=by
+  timezone: GMT+3
+  url: ${CRM_APP_URL:http://127.0.0.1:8090}
+  regionApiUrl: http://api.db-ip.com/v2/free/
+  cors:
+    origins: ${CRM_CORS_ORIGINS:http://127.0.0.1:8080}
+
+swagger:
+  url: ${CRM_SWAGGER_URL:127.0.0.1:8080}
+
+thread-pool:
+  core-pool-size: 4
+  max-pool-size: 4
+  queue-capacity: 100
+
+skype:
+  client:
+    id: ${CRM_SKYPE_CLIENT_ID:1}
+    secret: ${CRM_SKYPE_CLIENT_SECRET:1}
+  grantType: client_credentials
+  scope: https://api.botframework.com/.default
+  tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+  apiUrl: https://smba.trafficmanager.net/apis/v3/conversations/%s/activities
+  chat:
+    cv: ${CRM_SKYPE_CHAT_CV:1}
+    estimation: ${CRM_SKYPE_CHAT_ESTIMATION:1}
+  url:
+    resumeRequest: /resume-requests/
+    estimationRequest: /estimation-requests/
+    sales: /sales/
+
+telegram:
+  url:
+    apiUrl: ${CRM_TELEGRAM_API_URL:https://127.0.0.1}
+    postSale: /PostSaleOrder/
+    postAssignmentEmployee: /GiveSaleOrder/
+  chatId: ${CRM_TELEGRAM_CHAT_ID:1}
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+  mail:
+    host: ${CRM_MAIL_HOST:127.0.0.1}
+    username: ${CRM_MAIL_USERNAME:user}
+    password: ${CRM_MAIL_PASSWORD:user}
+  protocol: smtp
+  properties:
+    mail:
+      debug: true
+      smtp:
+        port: 50025
+  http:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+logging:
+  level:
+    root: debug
+
+time:
+  scheduler:
+    minute: 1800
+    hour: 5400
+
+scheduled:
+  cronNightDistribution: ${CRM_CRON_NIGHT_DISTRIBUTION:0 0/5 * * * ?}
+  cronNightDistributionMailNotifier: ${CRM_CRON_NIGHT_DISTRIBUTION_MAIL_NOTIFIER:0 30 11 * * ?}
+  cronDayDistribution: ${CRM_CRON_DAY_DISTRIBUTION:0 0/3 * * * ?}
+  #Responsible RM distribution.
+  cron30Minute: ${CRM_CRON_3O_MINUTE:0 0/1 * * * *}
+  cron1Hour: ${CRM_CRON_1_HOUR:0 0/2 * * * *}
+
+distribution:
+  lifetimeNightDistribution: 5
+  lifetimeDayDistribution: 5
+
+#For tests.
+test:
+  time:
+    scheduler:
+      minute: 60
+      hour: 120
+
+#Jwt token parameters.
+token:
+  #Token lifetime for new user registration. Set in hours.
+  #Hours
+  registerExpirationTime: 24
+  #Refresh token lifetime. Set in hours.
+  #Hours
+  refreshExpirationTime: 240
+  #Access token lifetime. Set in minutes.
+  #minutes
+  accessExpirationTime: 1440
+  #Access token key.
+  accessSecret: ${CRM_TOKEN_ACCESS_SECRET:access}
+  #Refresh token key.
+  refreshSecret: ${CRM_TOKEN_REFRESH_SECRET:refresh}
+
+#LDAP connection parameters.
+ldap:
+  #Use LDAP. Values: true, false
+  enable: false
+  #Connection URL.
+  url: ${CRM_LDAP_URL}
+  #Port.
+  port: 389
+  #Login with the prefix.
+  login: ${CRM_LDAP_LOGIN}
+  #Password.
+  password: ${CRM_LDAP_PASSWORD}
+  #Prefix.
+  ntNamePrefix: ${CRM_LDAP_PREFIX}
+
+passay:
+  lowerCaseCharacters: 3
+  upperCaseCharacters: 3
+  numberOfDigits: 3
+  specialChars: 3
+  lengthPassword: 12
