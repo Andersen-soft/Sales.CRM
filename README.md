@@ -84,6 +84,8 @@ To use this user, you need to generate a JWT token for him for authentication us
     ./Backend/src/main/application.yml 
     resourcestring.datasource.initialize: "true" to "false"
 
+    When you have built and launched the docker containers using docker-compose, it takes about 2-3 minutes for the application to start fully.
+
 4. Check in your browser:
 
     frontend {IP of container launch}:8088
