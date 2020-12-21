@@ -81,7 +81,7 @@ To use this user, you need to generate a JWT token for him for authentication us
 3. Launch: docker-compose up -d
 
     After installation, change the value of the variable: 
-    ./Backend/src/main/application.yml 
+    ./Backend/src/main/resources/application.yml 
     resourcestring.datasource.initialize: "true" to "false"
 
     When you have built and launched the docker containers using docker-compose, it takes about 2-3 minutes for the application to start fully.
