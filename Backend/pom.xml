@@ -42,7 +42,7 @@
         <org.apache.cxf.cxf-rt-rs-client.version>3.2.5</org.apache.cxf.cxf-rt-rs-client.version>
         <com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>2.6.4</com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>
         <javax.ws.rs.javax.ws.rs-api.version>2.1</javax.ws.rs.javax.ws.rs-api.version>
-        <com.amazonaws.aws-java-sdk.version>1.11.375</com.amazonaws.aws-java-sdk.version>
+        <com.amazonaws.aws-java-sdk.version>1.11.873</com.amazonaws.aws-java-sdk.version>
         <com.ibm.icu.icu4j.version>62.1</com.ibm.icu.icu4j.version>
         <org.apache.tika.tika-core.version>1.20</org.apache.tika.tika-core.version>
         <commons-beanutils.commons-beanutils.version>1.7.0</commons-beanutils.commons-beanutils.version>
