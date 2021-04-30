@@ -37,7 +37,7 @@
         <io.jsonwebtoken.jjwt.version>0.9.1</io.jsonwebtoken.jjwt.version>
         <javax.validation.validation-api.version>2.0.1.Final</javax.validation.validation-api.version>
         <org.hibernate.hibernate-validator.version>6.0.17.Final</org.hibernate.hibernate-validator.version>
-        <org.hibernate.hibernate-c3p0.version>5.3.3.Final</org.hibernate.hibernate-c3p0.version>
+        <org.hibernate.hibernate-c3p0.version>5.4.24.Final</org.hibernate.hibernate-c3p0.version>
         <org.hibernate.hibernate-validator-annotation-processor.version>6.0.17.Final</org.hibernate.hibernate-validator-annotation-processor.version>
         <org.apache.cxf.cxf-rt-rs-client.version>3.2.5</org.apache.cxf.cxf-rt-rs-client.version>
         <com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>2.6.4</com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>
