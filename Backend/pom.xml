@@ -42,7 +42,7 @@
         <org.apache.cxf.cxf-rt-rs-client.version>3.2.5</org.apache.cxf.cxf-rt-rs-client.version>
         <com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>2.6.4</com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>
         <javax.ws.rs.javax.ws.rs-api.version>2.1</javax.ws.rs.javax.ws.rs-api.version>
-        <com.amazonaws.aws-java-sdk.version>1.11.375</com.amazonaws.aws-java-sdk.version>
+        <com.amazonaws.aws-java-sdk.version>1.11.1024</com.amazonaws.aws-java-sdk.version>
         <com.ibm.icu.icu4j.version>62.1</com.ibm.icu.icu4j.version>
         <org.apache.tika.tika-core.version>1.20</org.apache.tika.tika-core.version>
         <commons-beanutils.commons-beanutils.version>1.7.0</commons-beanutils.commons-beanutils.version>
@@ -52,7 +52,7 @@
         <org.jsoup.jsoup.version>1.11.3</org.jsoup.jsoup.version>
         <p6spy.p6spy.version>3.8.1</p6spy.p6spy.version>
         <com.microsoft.bot.schema.botbuilder-schema.version>4.0.0-a1</com.microsoft.bot.schema.botbuilder-schema.version>
-        <io.rest-assured.rest-assured.version>4.1.1</io.rest-assured.rest-assured.version>
+        <io.rest-assured.rest-assured.version>4.4.0</io.rest-assured.rest-assured.version>
         <org.modelmapper.modelmapper.version>2.3.8</org.modelmapper.modelmapper.version>
         <org.passay.passay.version>1.6.0</org.passay.passay.version>
 
