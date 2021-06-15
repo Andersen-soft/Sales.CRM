@@ -22,7 +22,7 @@
         <org.springframework.boot.spring-boot-starter-aop.version>1.5.22.RELEASE</org.springframework.boot.spring-boot-starter-aop.version>
         <org.apache.commons.commons-lang3.version>3.8</org.apache.commons.commons-lang3.version>
         <org.apache.commons.commons-csv.version>1.6</org.apache.commons.commons-csv.version>
-        <commons-validator.commons-validator.version>1.6</commons-validator.commons-validator.version>
+        <commons-validator.commons-validator.version>1.7</commons-validator.commons-validator.version>
         <mysql.mysql-connector-java.version>8.0.11</mysql.mysql-connector-java.version>
         <org.projectlombok.lombok.version>1.18.2</org.projectlombok.lombok.version>
         <com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>2.9.6</com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>
