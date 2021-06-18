@@ -19,15 +19,15 @@
         <querydsl.version>4.2.1</querydsl.version>
         <com.google.code.gson.gson.version>2.8.5</com.google.code.gson.gson.version>
         <io.sentry.sentry-log4j2.version>1.7.30</io.sentry.sentry-log4j2.version>
-        <org.springframework.boot.spring-boot-starter-aop.version>1.5.22.RELEASE</org.springframework.boot.spring-boot-starter-aop.version>
+        <org.springframework.boot.spring-boot-starter-aop.version>2.3.0.RELEASE</org.springframework.boot.spring-boot-starter-aop.version>
         <org.apache.commons.commons-lang3.version>3.8</org.apache.commons.commons-lang3.version>
         <org.apache.commons.commons-csv.version>1.6</org.apache.commons.commons-csv.version>
         <commons-validator.commons-validator.version>1.6</commons-validator.commons-validator.version>
-        <mysql.mysql-connector-java.version>8.0.11</mysql.mysql-connector-java.version>
+        <mysql.mysql-connector-java.version>8.0.13</mysql.mysql-connector-java.version>
         <org.projectlombok.lombok.version>1.18.2</org.projectlombok.lombok.version>
-        <com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>2.9.6</com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>
-        <io.springfox.springfox-swagger2.version>2.9.2</io.springfox.springfox-swagger2.version>
-        <io.springfox.springfox-swagger-ui.version>2.9.2</io.springfox.springfox-swagger-ui.version>
+        <com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>2.9.8</com.fasterxml.jackson.datatype.jackson-datatype-jsr310.version>
+        <io.springfox.springfox-swagger2.version>2.10.0</io.springfox.springfox-swagger2.version>
+        <io.springfox.springfox-swagger-ui.version>2.10.0</io.springfox.springfox-swagger-ui.version>
         <io.swagger.swagger-annotations.version>1.5.21</io.swagger.swagger-annotations.version>
         <io.swagger.swagger-models.version>1.5.21</io.swagger.swagger-models.version>
         <com.unboundid.unboundid-ldapsdk-minimal-edition.version>3.2.1</com.unboundid.unboundid-ldapsdk-minimal-edition.version>
@@ -39,10 +39,10 @@
         <org.hibernate.hibernate-validator.version>6.0.17.Final</org.hibernate.hibernate-validator.version>
         <org.hibernate.hibernate-c3p0.version>5.3.3.Final</org.hibernate.hibernate-c3p0.version>
         <org.hibernate.hibernate-validator-annotation-processor.version>6.0.17.Final</org.hibernate.hibernate-validator-annotation-processor.version>
-        <org.apache.cxf.cxf-rt-rs-client.version>3.2.5</org.apache.cxf.cxf-rt-rs-client.version>
+        <org.apache.cxf.cxf-rt-rs-client.version>3.3.8</org.apache.cxf.cxf-rt-rs-client.version>
         <com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>2.6.4</com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider.version>
         <javax.ws.rs.javax.ws.rs-api.version>2.1</javax.ws.rs.javax.ws.rs-api.version>
-        <com.amazonaws.aws-java-sdk.version>1.11.375</com.amazonaws.aws-java-sdk.version>
+        <com.amazonaws.aws-java-sdk.version>1.11.883</com.amazonaws.aws-java-sdk.version>
         <com.ibm.icu.icu4j.version>62.1</com.ibm.icu.icu4j.version>
         <org.apache.tika.tika-core.version>1.20</org.apache.tika.tika-core.version>
         <commons-beanutils.commons-beanutils.version>1.7.0</commons-beanutils.commons-beanutils.version>
@@ -52,7 +52,7 @@
         <org.jsoup.jsoup.version>1.11.3</org.jsoup.jsoup.version>
         <p6spy.p6spy.version>3.8.1</p6spy.p6spy.version>
         <com.microsoft.bot.schema.botbuilder-schema.version>4.0.0-a1</com.microsoft.bot.schema.botbuilder-schema.version>
-        <io.rest-assured.rest-assured.version>4.1.1</io.rest-assured.rest-assured.version>
+        <io.rest-assured.rest-assured.version>4.4.0</io.rest-assured.rest-assured.version>
         <org.modelmapper.modelmapper.version>2.3.8</org.modelmapper.modelmapper.version>
         <org.passay.passay.version>1.6.0</org.passay.passay.version>
 
