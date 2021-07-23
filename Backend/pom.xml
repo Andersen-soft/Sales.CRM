@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <querydsl.version>4.2.1</querydsl.version>
+        <querydsl.version>5.0.0</querydsl.version>
         <com.google.code.gson.gson.version>2.8.5</com.google.code.gson.gson.version>
         <io.sentry.sentry-log4j2.version>1.7.30</io.sentry.sentry-log4j2.version>
         <org.springframework.boot.spring-boot-starter-aop.version>1.5.22.RELEASE</org.springframework.boot.spring-boot-starter-aop.version>
