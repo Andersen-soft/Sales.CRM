@@ -49,7 +49,7 @@
         <com.jcraft.jsch.version>0.1.55</com.jcraft.jsch.version>
         <org.json.json.version>20160810</org.json.json.version>
         <net.ttddyy.datasource-proxy.version>1.5</net.ttddyy.datasource-proxy.version>
-        <org.jsoup.jsoup.version>1.11.3</org.jsoup.jsoup.version>
+        <org.jsoup.jsoup.version>1.14.2</org.jsoup.jsoup.version>
         <p6spy.p6spy.version>3.8.1</p6spy.p6spy.version>
         <com.microsoft.bot.schema.botbuilder-schema.version>4.0.0-a1</com.microsoft.bot.schema.botbuilder-schema.version>
         <io.rest-assured.rest-assured.version>4.1.1</io.rest-assured.rest-assured.version>
